@@ -30,23 +30,26 @@ class LinkedList {
     int removeFromEnd() {
         Node prev = null;
         Node _head = head;
+        int d = -1;
         if(isEmpty()){
             System.out.println("Already empty");
-            return -1;
+            return d;
         }
         while (_head.next != null) {
             prev = _head;
             _head = _head.next;
         }
         if (prev == null) {
+            d = head.data;
             head = null;
             current = null;
         } else {
+            d = _head.data;
             prev.next = null;
             current = prev;
         }
 
-        return _head.data;
+        return d;
     }
 
     void insertAtStart(int data) {
@@ -54,6 +57,7 @@ class LinkedList {
         n.data = data;
         if (isEmpty()) {
             head = n;
+            current = n;
         } else {
             n.next = head;
             head = n;
@@ -81,6 +85,5 @@ class LinkedList {
     boolean isEmpty() {
         return head == null;
     }
-
 
 }

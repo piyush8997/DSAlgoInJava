@@ -3,6 +3,8 @@ public class Main {
     public static void main(String[] args) {
 
         LinkedList linkedList = new LinkedList();
+
+        linkedList.insertAtStart(5555);
         linkedList.insertAtEnd(10);
         linkedList.insertAtEnd(20);
         linkedList.insertAtEnd(30);
@@ -16,6 +18,7 @@ public class Main {
             System.out.println(linkedList.removeFromStart());
         }
 
+        linkedList.insertAtStart(5555);
         linkedList.insertAtEnd(10);
         linkedList.insertAtEnd(20);
         linkedList.insertAtEnd(30);
