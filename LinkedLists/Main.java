@@ -8,21 +8,26 @@ public class Main {
         linkedList.insertAtEnd(30);
         linkedList.insertAtEnd(40);
         linkedList.insertAtEnd(50);
-
         linkedList.insertAtStart(8888);
         linkedList.insertAtStart(9999);
 
-        linkedList.printList();
+        System.out.println("Remove from start");
+        while (!linkedList.isEmpty()){
+            System.out.println(linkedList.removeFromStart());
+        }
 
-        linkedList.removeFromEnd();
-        linkedList.printList();
+        linkedList.insertAtEnd(10);
+        linkedList.insertAtEnd(20);
+        linkedList.insertAtEnd(30);
+        linkedList.insertAtEnd(40);
+        linkedList.insertAtEnd(50);
+        linkedList.insertAtStart(8888);
+        linkedList.insertAtStart(9999);
 
-        linkedList.removeFromStart();
-        linkedList.printList();
+        System.out.println("\nRemove from end");
+        while (!linkedList.isEmpty()){
+            System.out.println(linkedList.removeFromEnd());
+        }
 
-        linkedList.insertAtEnd(5555);
-        linkedList.printList();
-
-        System.out.println("\nIs list empty? "+linkedList.isEmpty());
     }
 }
