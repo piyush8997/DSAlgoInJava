@@ -66,4 +66,56 @@ class DoublyLinkedList {
         }
     }
 
+    boolean insertAfter(int key, int data) {
+        Node _head = head;
+
+        // Search the node with the key
+        while (_head.data != key) {
+            _head = _head.next;
+            if (_head == null) {
+                System.out.println("Key not found. Insertion failed");
+                return false;
+            }
+        }
+
+        // Create a new node
+        Node n = new Node();
+        n.data = data;
+
+        if (_head == cur) { // searched node is the last node
+            n.next = null;
+            cur = n;
+        } else {
+            n.next = _head.next;
+        }
+
+        n.prev = _head;
+        _head.next = n;
+
+        return true;
+    }
+
+    Node deleteNode(int key){
+        Node _head = head;
+        while (_head.data != key){
+            _head = _head.next;
+            if(_head == null){
+                System.out.println("No key found");
+                return null;
+            }
+        }
+
+        if(_head == cur){ // Last node check
+            cur = _head.prev;
+            _head.prev.next = null;
+        }else if(_head == head){ // First node check
+            head = _head.next;
+        }else {
+            _head.prev.next = _head.next;
+            _head.next.prev = _head.prev;
+        }
+
+        return _head;
+    }
+
 }

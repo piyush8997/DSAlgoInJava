@@ -14,7 +14,10 @@ public class Main {
 
         linkedList.printList();
 
-        System.out.printf("\n[%d] deleted",linkedList.deleteFromEnd());
+        System.out.println("\n"+linkedList.deleteNode(40).data + " is removed");
+        linkedList.printList();
+
+        System.out.println("\n"+linkedList.deleteNode(888).data + " is removed");
         linkedList.printList();
 
         System.out.printf("\n[%d] deleted",linkedList.deleteFromEnd());
@@ -23,7 +26,13 @@ public class Main {
         System.out.printf("\n[%d] deleted",linkedList.deleteFromEnd());
         linkedList.printList();
 
+        linkedList.insertAfter(999,1111);
+        linkedList.printList();
+
         System.out.printf("\n[%d] deleted",linkedList.deleteFromEnd());
+        linkedList.printList();
+
+        System.out.println("\n"+linkedList.deleteNode(999).data + " is removed");
         linkedList.printList();
     }
 }
