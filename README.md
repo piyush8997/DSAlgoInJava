@@ -1,2 +1,2 @@
-# DataStructuresInJava
-This repository contains implementations of basic ADT's done in Java
+# Data Structures and Algorithms In Java
+This repository contains implementations of basic ADT's and algorithms done in Java
