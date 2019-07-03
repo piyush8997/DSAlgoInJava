@@ -155,16 +155,20 @@ public class BST {
     public void inOrderDFSTraversal(){
         Stack<Node> stack = new Stack<>();
         Node current = rootNode;
-
-        while (current!=null || stack.size() > 0){
-            while (current!=null){
+        boolean bDone = false;
+        while (!bDone){
+            if(current!=null){
                 stack.push(current);
                 current = current.leftChild;
+            }else{
+                if(stack.isEmpty()){
+                    bDone = true;
+                }else {
+                    Node n = stack.pop();
+                    System.out.printf("%d ",n.data);
+                    current = n.rightChild;
+                }
             }
-            // at this point, current is null,
-            Node n = stack.pop();
-            System.out.printf("%d ",n.data);
-            current = n.rightChild;
         }
         System.out.println();
     }
