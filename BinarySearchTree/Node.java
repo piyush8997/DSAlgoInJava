@@ -1,13 +1,13 @@
-package BinarySearchTree;
+package binarysearchtree;
 
 public class Node {
-    int key;
-    String val;
-    Node leftChild, rightChild;
+    int data;
+    Node leftChild;
+    Node rightChild;
 
-    Node(int key, String val){
-        super();
-        this.key = key;
-        this.val = val;
+    Node(int data){
+        this.leftChild = null;
+        this.rightChild = null;
+        this.data = data;
     }
 }
