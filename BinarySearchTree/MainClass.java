@@ -19,7 +19,14 @@ public class MainClass {
 
         System.out.println("BFS Traversal");
         bst.BFSTraversal();
+		
         System.out.println("DFS InOrder Traversal");
         bst.inOrderDFSTraversal();
+		
+		System.out.println("DFS PreOrder Traversal");
+        bst.preOrderDFSTraversal();
+
+        System.out.println("DFS PostOrder Traversal");
+        bst.postOrderDFSTraversal();
     }
 }

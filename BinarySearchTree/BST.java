@@ -172,4 +172,44 @@ public class BST {
         }
         System.out.println();
     }
+	
+	public void preOrderDFSTraversal(){
+        Stack<Node> stack = new Stack<>();
+        stack.push(rootNode);
+        while (!stack.isEmpty()){
+            Node n = stack.pop();
+            System.out.printf("%d ", n.data);
+            if(n.leftChild != null){
+                stack.push(n.leftChild);
+            }
+            if(n.rightChild != null){
+                stack.push(n.rightChild);
+            }
+        }
+        System.out.println();
+    }
+
+    public void postOrderDFSTraversal(){
+        Stack<Node> stack = new Stack<>();
+        stack.push(rootNode);
+        Node prev = null;
+        while (!stack.isEmpty()){
+            Node current = stack.peek();
+            if(prev == null || prev.leftChild == current || prev.rightChild == current){
+                if(current.leftChild != null){
+                    stack.push(current.leftChild);
+                }else if(current.rightChild != null){
+                    stack.push(current.rightChild);
+                }
+            }else if(prev == current.leftChild){
+                if(current.rightChild != null){
+                    stack.push(current.rightChild);
+                }
+            }else{
+                System.out.printf("%d ", current.data);
+                stack.pop();
+            }
+            prev = current;
+        }
+    }
 }
