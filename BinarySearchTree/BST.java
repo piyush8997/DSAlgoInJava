@@ -179,11 +179,11 @@ public class BST {
         while (!stack.isEmpty()){
             Node n = stack.pop();
             System.out.printf("%d ", n.data);
-            if(n.leftChild != null){
-                stack.push(n.leftChild);
-            }
             if(n.rightChild != null){
                 stack.push(n.rightChild);
+            }
+			if(n.leftChild != null){
+                stack.push(n.leftChild);
             }
         }
         System.out.println();
