@@ -210,6 +210,7 @@ public class BST {
             }
             prev = current;
         }
+		System.out.println();
     }
 	
 	public int getTreeSize(){
