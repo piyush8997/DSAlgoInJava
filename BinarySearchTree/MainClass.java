@@ -28,5 +28,9 @@ public class MainClass {
 
         System.out.println("DFS PostOrder Traversal");
         bst.postOrderDFSTraversal();
+		
+		System.out.println((bst.isPresentInTree(20))?"Present":"Not Present");
+        System.out.println((bst.isPresentInTree(40))?"Present":"Not Present");
+        System.out.printf("Size of tree: %d\n", bst.getTreeSize());
     }
 }

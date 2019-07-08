@@ -56,7 +56,6 @@ public class BST {
     }
 
     public boolean delete(int data){
-        // search for node
         Node currentNode = rootNode;
         Node parentNode = rootNode;
         boolean isLeftChild = false;
@@ -211,5 +210,45 @@ public class BST {
             }
             prev = current;
         }
+    }
+	
+	public int getTreeSize(){
+        int size = 0;
+        Stack<Node> stack = new Stack<>();
+        stack.push(rootNode);
+        while (!stack.isEmpty()){
+            Node n = stack.pop();
+            size++;
+            if(n.rightChild!=null){
+                stack.push(n.rightChild);
+            }
+            if(n.leftChild!=null){
+                stack.push(n.leftChild);
+            }
+        }
+        return size;
+    }
+	
+	public boolean isPresentInTree(int data){
+        Stack<Node> stack = new Stack<>();
+        Node current = rootNode;
+        boolean bDone = false;
+        while (!bDone){
+            if(current != null){
+                stack.push(current);
+                current = current.leftChild;
+            }else{
+                if(stack.isEmpty()){
+                    bDone = true;
+                }else{
+                    Node n = stack.pop();
+                    if(n.data == data){
+                        return true;
+                    }
+                    current = n.rightChild;
+                }
+            }
+        }
+        return false;
     }
 }
