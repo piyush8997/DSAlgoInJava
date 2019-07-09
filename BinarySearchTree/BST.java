@@ -231,6 +231,7 @@ public class BST {
     }
 	
 	public boolean isPresentInTree(int data){
+		
         Stack<Node> stack = new Stack<>();
         Node current = rootNode;
         boolean bDone = false;
@@ -251,5 +252,46 @@ public class BST {
             }
         }
         return false;
+    }
+	
+	public void displayTree(){
+        Stack<Node> mainStack = new Stack<>();
+        mainStack.push(rootNode);
+        int spaces = 32;
+        boolean bEmptyRow = false;
+
+        while(!bEmptyRow){
+            Stack<Node> stack = new Stack<>();
+            bEmptyRow = true;
+            // left spaces
+            for(int i = 0; i < spaces; i++){
+                System.out.print(" ");
+            }
+            while(!mainStack.isEmpty()){
+                Node n = mainStack.pop();
+                if(n!=null){
+                    System.out.print(n.data);
+                    stack.push(n.leftChild);
+                    stack.push(n.rightChild);
+                    if(n.leftChild!=null || n.rightChild!=null){
+                        bEmptyRow = false;
+                    }
+                }else{
+                    System.out.print("__");
+                    stack.push(null);
+                    stack.push(null);
+                }
+
+                // right spaces after each element
+                for(int i = 0; i < spaces*2-2; i++){
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("\n");
+            spaces = spaces / 2;
+            while(!stack.isEmpty()){
+                mainStack.push(stack.pop());
+            }
+        }
     }
 }

@@ -10,6 +10,10 @@ public class MainClass {
         bst.insert(2);
         bst.insert(20);
         bst.insert(30);
+        bst.insert(15);
+        bst.insert(3);
+        bst.insert(60);
+        bst.insert(0);
 
         System.out.println(String.format("Max: %d | Min: %d", bst.getMaxNode().data, bst.getMinNode().data));
 
@@ -32,5 +36,8 @@ public class MainClass {
 		System.out.println((bst.isPresentInTree(20))?"Present":"Not Present");
         System.out.println((bst.isPresentInTree(40))?"Present":"Not Present");
         System.out.printf("Size of tree: %d\n", bst.getTreeSize());
+		
+		System.out.println("\nTree Visualization:");
+        bst.displayTree();
     }
 }
