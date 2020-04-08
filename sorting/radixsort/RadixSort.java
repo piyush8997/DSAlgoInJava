@@ -6,7 +6,7 @@ public class RadixSort {
     public static void sort(int[] ar) {
         int max = getMax(ar);
         // start from one's place, then 10's and so on until all places are done
-        for (int place = 1; place < max / place; place *= 10) {
+        for (int place = 1; max / place > 0; place *= 10) {
             countSort(ar, ar.length, place); // perform counting sort.
         }
     }
