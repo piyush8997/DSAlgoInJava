@@ -7,7 +7,9 @@ public class PrimeTest {
         int num = 7;
         System.out.println(num + " is " + (isPrime(num) ? "prime." : "not prime."));
 
-        sieveOfEratosthenes(10);
+        sieveOfEratosthenes(100);
+
+        SegmentedSieve.printPrimes(5, 100);
     }
 
     // Check whether number is prime or not
@@ -40,8 +42,9 @@ public class PrimeTest {
 
         for(int i = 2; i < primes.length; i++) {
             if(primes[i]) {
-                System.out.println(i + " is prime");
+                System.out.print(i + " ");
             }
         }
+        System.out.println();
     }
 }
