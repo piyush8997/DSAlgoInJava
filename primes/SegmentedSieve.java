@@ -8,8 +8,17 @@ public class SegmentedSieve {
         System.out.println("SegmentedSieve.printPrimes");
 
         ArrayList<Integer> primeNumbers = new ArrayList<>();
-        int newEnd = ((int) Math.sqrt(end)) + 1;
 
+        if(start == 0 || start == 1) {
+            // run simple sieve only.
+            sieveOfEratosthenes(end, primeNumbers);
+            for(int prime : primeNumbers) {
+                System.out.print(prime + " ");
+            }
+            return;
+        }
+
+        int newEnd = ((int) Math.sqrt(end)) + 1;
         sieveOfEratosthenes(newEnd, primeNumbers);
 
         int n = end - start + 1;
